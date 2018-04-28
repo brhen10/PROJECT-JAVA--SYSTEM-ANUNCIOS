@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <b:panel>
+                <h1>Anuncios</h1>
+                <b:commandButton action="#{usuarioControle.urlCreate}" value="Cadastrar Usuario" />
+                <b:commandButton action="#{usuarioControle.urlLogin}" value="Login" />
+                <br/><br/>
+                <b:dataTable value="#{anuncioControle.findAll()}" var="v">
+                    <b:dataTableColumn label="Título">#{v.titulo}</b:dataTableColumn>    
+                    <b:dataTableColumn label="Descrição">#{v.descricao}</b:dataTableColumn>
+                    <b:dataTableColumn label="Autor">#{v.usuario.nome}</b:dataTableColumn>
+                </b:dataTable>
+            </b:panel>
+        </h:form>
+    </h:body>
+</html>
+
